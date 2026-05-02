@@ -1,155 +1,185 @@
-🎯 VidAgent – Autonomous YouTube Search Assistant
-<p align="center"> An intelligent CLI-based automation agent that searches, plays, and navigates YouTube content autonomously </p> <p align="center"> <img src="https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python" /> <img src="https://img.shields.io/badge/Selenium-WebAutomation-green?style=for-the-badge&logo=selenium" /> <img src="https://img.shields.io/badge/CLI-InquirerPy-orange?style=for-the-badge" /> <img src="https://img.shields.io/badge/Agent-Autonomous-red?style=for-the-badge" /> <img src="https://img.shields.io/badge/Author-Yash%20Brahmankar-success?style=for-the-badge" /> </p>
-🔥 Tagline
+<div align="center">
 
-“An autonomous agent that finds and plays YouTube content—so you don’t have to.” 🤖▶️
+# 🎯 CLI - VIDPILOT
 
-📝 Project Description
+**A CLI-based automation agent that searches, navigates, and plays YouTube content — no manual input required.**
 
-VidAgent is a Python-based autonomous YouTube automation agent that allows users to search and play content on YouTube using interactive CLI menus.
+[![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python)](https://www.python.org/)
+[![Selenium](https://img.shields.io/badge/Selenium-WebAutomation-green?style=for-the-badge&logo=selenium)](https://www.selenium.dev/)
+[![CLI](https://img.shields.io/badge/CLI-InquirerPy-orange?style=for-the-badge)](https://inquirerpy.readthedocs.io/)
+[![Agent](https://img.shields.io/badge/Type-Autonomous_Agent-red?style=for-the-badge)](https://github.com/loisekk)
+[![License](https://img.shields.io/badge/License-MIT-lightgrey?style=for-the-badge)](LICENSE)
+[![Author](https://img.shields.io/badge/Author-Yash%20Brahmankar-success?style=for-the-badge)](https://github.com/loisekk)
 
-Instead of typing search queries manually, users simply select a category, topic, and context, and VidAgent intelligently constructs and executes the search—then automatically plays the most relevant video.
+> *"An autonomous agent that finds and plays YouTube content — so you don't have to."* 🤖▶️
 
-This project demonstrates:
+</div>
 
-Intelligent automation workflows
+---
 
-Agent-like decision making
+## 📌 Overview
 
-Real-world usage of Selenium + CLI UX
+**VidPilot** is a Python automation agent that removes the friction from YouTube search.
 
-Clean and modular Python architecture
+Instead of typing queries manually, the user selects a category and context via an interactive CLI — VidPilot constructs an optimized search query, launches the browser, and plays the most relevant result automatically.
 
-Perfect for automation portfolios, AI agent demos, and advanced Python projects.
+This project demonstrates real-world agentic behavior: decision making, context-aware query generation, and browser automation — packaged in a clean, modular Python architecture.
 
-🚀 Key Features
+---
 
-🎯 Category-based intelligent search
-🧠 Autonomous query generation
-🤖 Automated YouTube navigation
-⌨️ Interactive CLI using InquirerPy
-⚡ Real-time browser automation with Selenium
+## ✨ Features
 
-🔍 Cleaned & optimized search queries
+| Feature | Details |
+|---|---|
+| 🎯 Category-Based Search | Structured input replaces raw search typing |
+| 🧠 Autonomous Query Building | Context questions → cleaned, optimized query |
+| 🤖 Browser Automation | Selenium navigates and plays without user input |
+| ⌨️ Interactive CLI | InquirerPy menus for smooth terminal UX |
+| 🔍 Query Optimization | Regex-based cleaner removes noise before search |
+| 🧩 Modular Architecture | Each category has its own flow module |
 
-🧩 Modular and extensible architecture
+---
 
-🧠 Supported Content Categories
+## 🧠 Supported Categories
 
-🏎️ F1 (Year, Grand Prix, Stage)
+| Category | Context Inputs |
+|---|---|
+| 🏎 F1 Racing | Year, Grand Prix, Stage |
+| 🍥 Anime | Title, Type (Intro / Trailer / Clip) |
+| 🎬 Movies | Title, Genre |
+| 📺 Web Series | Title, Episode |
+| 🎮 Gaming | Game name, Content type |
+| 🎨 Animations | Style, Topic |
+| 🐭 Cartoons | Show name |
+| 📘 Study & Tech | Subject, Topic, Level |
 
-🍥 Anime (Intro, Clips, Trailer, Movies)
+---
 
-🎬 Movies
+## ⚙️ How It Works
 
-📺 Web Series
-
-🎮 Gaming Videos
-
-🎨 Animations
-
-🐭 Cartoons
-
-📘 Study & Tech Content
-
-Each category dynamically builds a smart YouTube search query.
-
-⚙️ How It Works (High Level)
-
-User selects a category via CLI
-
-VidAgent asks contextual questions
-
-Query is cleaned and optimized
-
-Selenium opens YouTube automatically
-
-First relevant video is selected and played
-
+```
+User picks category (CLI)
+        ↓
+VidPilot asks contextual questions
+        ↓
+Answers → Query Cleaner (Regex)
+        ↓
+Selenium opens YouTube → searches → selects top result → plays
+        ↓
 Agent continues navigation autonomously
+```
 
-🧰 Tech Stack
+**Architecture:**
 
-Python 3.x
-
-Selenium WebDriver
-
-InquirerPy (CLI UX)
-
-dotenv (Environment handling)
-
-Regex (Query cleaning)
-
-ChromeDriver
-
-📂 Project Structure (Conceptual)
-VidAgent/
-│
-├── agent.py
-├── flows/
-│   ├── anime_flow.py
-│   ├── f1_flow.py
-│   ├── gaming_flow.py
-│   └── study_flow.py
-│
-├── utils/
-│   └── query_cleaner.py
-│
-└── .env
-
-
+```
 ┌──────────────┐
-│   User CLI   │
-│ (InquirerPy) │
+│  User CLI    │   ← InquirerPy menus
 └──────┬───────┘
-       │
-       ▼
-┌─────────────────────┐
-│ Category Selection  │
-│  (F1 / Anime / etc) │
-└──────┬──────────────┘
-       │
-       ▼
-┌─────────────────────┐
-│ Contextual Flow     │
-│ (Year, Stage, Type)│
-└──────┬──────────────┘
-       │
-       ▼
-┌─────────────────────┐
-│ Query Cleaner       │
-│ (Regex Optimization)│
-└──────┬──────────────┘
-       │
-       ▼
-┌─────────────────────┐
-│ Selenium Agent      │
-│ - Open YouTube      │
-│ - Search Video      │
-│ - Auto Play         │
-└─────────────────────┘
+       ↓
+┌──────────────────┐
+│ Category Router  │   ← Picks flow module
+└──────┬───────────┘
+       ↓
+┌──────────────────┐
+│ Contextual Flow  │   ← Asks relevant questions per category
+└──────┬───────────┘
+       ↓
+┌──────────────────┐
+│ Query Cleaner    │   ← Regex optimization
+└──────┬───────────┘
+       ↓
+┌──────────────────┐
+│ Selenium Agent   │   ← Open → Search → Click → Play
+└──────────────────┘
+```
+
+---
+
+## 🛠 Tech Stack
+
+| Layer | Tool | Purpose |
+|---|---|---|
+| Language | Python 3.x | Core agent logic |
+| Browser Automation | Selenium + ChromeDriver | YouTube navigation & playback |
+| CLI UX | InquirerPy | Interactive terminal menus |
+| Query Cleaning | `re` (Regex) | Normalize and optimize search strings |
+| Config | `python-dotenv` | Environment variable management |
+
+---
+
+## 📂 Project Structure
+
+```
+VidPilot/
+├── agent.py                  # Entry point — boots CLI and routes to flows
+├── flows/
+│   ├── anime_flow.py         # Anime category questions + query builder
+│   ├── f1_flow.py            # F1 category questions + query builder
+│   ├── gaming_flow.py        # Gaming category questions + query builder
+│   └── study_flow.py         # Study/Tech category questions + query builder
+├── utils/
+│   └── query_cleaner.py      # Regex-based query normalization
+├── .env                      # Environment config (browser path, etc.)
+└── README.md
+```
+
+---
+
+## 🚀 Getting Started
+
+**Clone the repo:**
+
+```bash
+git clone https://github.com/loisekk/VidPilot.git
+cd VidPilot
+```
+
+**Install dependencies:**
+
+```bash
+pip install selenium inquirerpy python-dotenv
+```
+
+**Set up ChromeDriver:**
+
+> Download [ChromeDriver](https://chromedriver.chromium.org/downloads) matching your Chrome version and add it to PATH.
+
+**Run the agent:**
+
+```bash
+python agent.py
+```
+
+---
+
+## 🎯 Use Cases
+
+- Autonomous agent demos for portfolios
+- Selenium + CLI UX practice
+- AI/Agentic systems learning
+- YouTube research automation
+- Template for category-driven CLI tools
+
+---
 
 
-🎯 Use Cases
 
-Automation demos
+## 👨‍💻 Author
 
-AI / Agentic systems learning
+**Yash Brahmankar**
+B.Tech AI & ML | OIST, 2024–2028
 
-Python + Selenium practice
+[![GitHub](https://img.shields.io/badge/GitHub-loisekk-181717?style=flat-square&logo=github)](https://github.com/loisekk)
+[![Email](https://img.shields.io/badge/Email-yashbrahmankar95@gmail.com-D14836?style=flat-square&logo=gmail)](mailto:yashbrahmankar95@gmail.com)
 
-CLI UX design
+---
 
-YouTube research automation
+## 📄 License
 
-Portfolio showcase project
+Licensed under the [MIT License](LICENSE) — free to use, modify, and distribute.
 
-👨‍💻 Author
+---
 
-Yash Brahmankar
-Python Developer | Automation | AI & Agentic Systems
-
-🔖 Hashtags
-#VidAgent #PythonAutomation #YouTubeAutomation #Selenium
-#AgenticAI #AutonomousAgent #CLIApplications #AIProjects
-#DeveloperTools #OpenSource #BuildInPublic #PythonDeveloper
+<div align="center">
+  <sub>Built with Python · Powered by Selenium · Driven by InquirerPy</sub>
+</div>
